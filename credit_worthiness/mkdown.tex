@@ -1,0 +1,153 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Untitled},
+            pdfauthor={Niall Trinder - R00088254},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Untitled}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Niall Trinder - R00088254}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{3 December 2018}
+
+
+\begin{document}
+\maketitle
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsection{Introduction}\label{introduction}
+
+For this assignment, we're working on the premise that a manager from a
+local financial institution, Olivia, has contacted us to help her assess
+the credit worthiness of future potential customers.
+
+She has provided us with the following data:
+
+\begin{itemize}
+\tightlist
+\item
+  Data set 1; 793 past loan customers with 14 attributes, labelled based
+  on Good/Bad Credit Standing.
+\item
+  Data set 2; 10 potential loan customers with no labels.
+\end{itemize}
+
+Our goal is to explore and assess the past loan customer data set, chose
+an appropriate model to train using this data and then use that model to
+assess the potential customer data set to aid Olivia's financial
+institution minimize the risk of loaning money to a customer who may
+default on the loan.
+
+\subsection{Exploratory Data Analysis
+(EDA)}\label{exploratory-data-analysis-eda}
+
+\subsection{ROC Curves (\textasciitilde{}280
+words)}\label{roc-curves-280-words}
+
+A ROC curve is a plot of the ``true positive rate'' on the y-axis and
+the ``false positive rate'' on the x-axis for every possible
+classification threshold.
+
+The true positive rate (or sensitivity) is the number of true positive
+classifications divided by the total occurances of the true class. For
+instance; if you were to classify a patient has `having the disease' or
+`not having the disease' then the true positive rate would be the number
+of patients \emph{correctly} classified as having the disease divided by
+the true total number of patients who have the disease.
+
+The false positive rate (or specificity) is simply 1 - sensitivity, or,
+the number of false positive classifications divided by the total
+occurances of the false class.
+
+The ROC courve visualises all possible thresholds were as
+missclassification rate is the error rate for a single threshold.
+
+A diagonal line from (0, 0) to (1, 1) on the graph would represent a
+model that does no better than guessing.
+
+You can use the ROC curve to quantify the performance of the classifier
+by giving a higher rating to better performing models. To do this we
+evaluate the area under the curve and express it as a percentage of the
+total area.
+
+Note that most problems in the real world don't have balanced classes
+and that this does not affect the ROC curve. Also ROC curves are useful
+een if the predicted values are not properly calibrated.
+
+
+\end{document}
